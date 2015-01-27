@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="PD.Controls.FrameWork.CommonControl.PopupMessageControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="300" x:Name="con"
+             d:DesignWidth="400"
+             xmlns:my="clr-namespace:PD.Controls.FrameWork.CommonControl">
+     
+    <Canvas VerticalAlignment="Bottom"
+            HorizontalAlignment="Right">
+        <Canvas.Resources>
+            <Storyboard x:Name="storyPopUp">
+                <DoubleAnimation Duration="0:0:1"
+                                 From="0"
+                                 To="-200"
+                                 Storyboard.TargetName="canvasPopup"
+                                 Storyboard.TargetProperty="(Canvas.Top)" />
+            </Storyboard>
+            <Storyboard x:Name="storyPopDown">
+                <DoubleAnimation Duration="0:0:1"
+                                 From="-200"
+                                 To="0"
+                                 Storyboard.TargetName="canvasPopup"
+                                 Storyboard.TargetProperty="(Canvas.Top)" />
+            </Storyboard>
+        </Canvas.Resources>
+        <Canvas VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                x:Name="canvasPopup"
+           
+                Width="{Binding ElementName=con, Path=Width,Mode=TwoWay}"
+                Height="{Binding ElementName=con, Path=Height,Mode=TwoWay}">
+            <Border BorderThickness="1,1,1,1"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Width="{Binding ElementName=con, Path=Width,Mode=TwoWay}"
+                    Height="{Binding ElementName=con, Path=Height,Mode=TwoWay}"
+                    CornerRadius="3,3,0,0"
+                    BorderBrush="#FF6C6C6C">
+
+                <Border BorderBrush="#FFF1F1F1"
+                        BorderThickness="1"
+                        CornerRadius="3,3,0,0"
+                        Background="#FFCACACA">
+
+                    <Grid Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Border BorderThickness="0"
+                                CornerRadius="3,3,0,0"
+                                Background="#FFCACACA">
+                            <Grid Margin="0,3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image  Cursor="Hand"
+                                        Stretch="Fill"
+                                        x:Name="imageTitle"
+                                        MaxWidth="16"
+                                        MaxHeight="16"></Image>
+
+
+                                <TextBlock Text=" "
+                                           x:Name="tbTitle"
+                                           Foreground="Black"
+                                           Margin="3,0,0,0"
+                                           Grid.Column="1"
+                                           Grid.Row="0" />
+                                <Image  Cursor="Hand"
+                                        x:Name="btnClose"
+                                        Grid.Column="2"
+                                        Width="16"
+                                        Height="16"
+                                        Source="/Images/Common/cancel.png"></Image>
+                            </Grid>
+                        </Border>
+
+                        <Border Background="#FFE5EAED"
+                                Margin="2,0,2,2"
+                                CornerRadius="3,3,0,0"
+                                Grid.Row="1"
+                                BorderBrush="#FF8B8B8B">
+                            <Border Margin="2" x:Name="contentPanel">
+
+                            </Border>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Border>
+        </Canvas>
+    </Canvas>
+</UserControl>

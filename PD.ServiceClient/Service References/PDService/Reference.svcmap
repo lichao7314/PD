@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9e4caabb-3bbf-4e1e-b1d3-772a8c131786" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/PD.Services/PDService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PDService1.xsd" MetadataType="Schema" ID="dae2935a-6831-477f-858c-914ee79f5dbd" SourceId="1" SourceUrl="http://localhost/PD.Services/PDService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PDService2.xsd" MetadataType="Schema" ID="c7318c19-1358-4b58-85ac-d354ba295697" SourceId="1" SourceUrl="http://localhost/PD.Services/PDService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PDService.disco" MetadataType="Disco" ID="6f6e8805-c421-4ed3-89f2-f56e65316514" SourceId="1" SourceUrl="http://localhost/PD.Services/PDService.svc?disco" />
+    <MetadataFile FileName="PDService5.xsd" MetadataType="Schema" ID="a6b88b98-c269-4e84-8de9-abcf6fe0db1f" SourceId="1" SourceUrl="http://localhost/PD.Services/PDService.svc?xsd=xsd5" />
+    <MetadataFile FileName="PDService.xsd" MetadataType="Schema" ID="500e8d72-2cd8-47e1-af63-4dcaa68d5048" SourceId="1" SourceUrl="http://localhost/PD.Services/PDService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PDService7.xsd" MetadataType="Schema" ID="ae365cb9-3a5d-4ee1-96f3-4323763dbd8a" SourceId="1" SourceUrl="http://localhost/PD.Services/PDService.svc?xsd=xsd9" />
+    <MetadataFile FileName="PDService71.xsd" MetadataType="Schema" ID="16f8d74b-789c-496f-a03e-f3fd39835790" SourceId="1" SourceUrl="http://localhost/PD.Services/PDService.svc?xsd=xsd11" />
+    <MetadataFile FileName="PDService6.xsd" MetadataType="Schema" ID="67cca7e8-c443-43f2-82c1-223c688926d2" SourceId="1" SourceUrl="http://localhost/PD.Services/PDService.svc?xsd=xsd7" />
+    <MetadataFile FileName="PDService3.xsd" MetadataType="Schema" ID="5c689f33-9d90-407e-be52-226842924bf3" SourceId="1" SourceUrl="http://localhost/PD.Services/PDService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PDService4.xsd" MetadataType="Schema" ID="08ceb2f6-202a-4af8-93cb-f0a11cc446ca" SourceId="1" SourceUrl="http://localhost/PD.Services/PDService.svc?xsd=xsd4" />
+    <MetadataFile FileName="PDService1.wsdl" MetadataType="Wsdl" ID="bbdbbd53-a9ce-4d5b-b223-c34b1e0700f4" SourceId="1" SourceUrl="http://localhost/PD.Services/PDService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="PDService.wsdl" MetadataType="Wsdl" ID="06ac74b3-3308-4059-9ef9-87ffef3cbe3a" SourceId="1" SourceUrl="http://localhost/PD.Services/PDService.svc?wsdl" />
+    <MetadataFile FileName="PDService61.xsd" MetadataType="Schema" ID="ceb7e82b-b810-4223-a6db-e46c3be9f098" SourceId="1" SourceUrl="http://localhost/PD.Services/PDService.svc?xsd=xsd6" />
+    <MetadataFile FileName="PDService72.xsd" MetadataType="Schema" ID="60884f33-79a5-46a9-a9aa-4d6bd8e6268e" SourceId="1" SourceUrl="http://localhost/PD.Services/PDService.svc?xsd=xsd8" />
+    <MetadataFile FileName="PDService73.xsd" MetadataType="Schema" ID="f8cb665f-ffac-43c7-9012-b1cd1c18cd75" SourceId="1" SourceUrl="http://localhost/PD.Services/PDService.svc?xsd=xsd10" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

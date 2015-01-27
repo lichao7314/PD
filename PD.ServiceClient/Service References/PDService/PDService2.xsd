@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PD.Model.Design.MaterialType" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PD.Model.Design.MaterialType" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/PD.Model" />
+  <xs:complexType name="ArrayOfT_Base_MateraliType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Base_MateraliType" nillable="true" type="tns:T_Base_MateraliType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Base_MateraliType" nillable="true" type="tns:ArrayOfT_Base_MateraliType" />
+  <xs:complexType name="T_Base_MateraliType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/PD.Model" base="q1:State">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MaterialTypeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialTypeID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialTypeName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_Base_MateraliType" nillable="true" type="tns:T_Base_MateraliType" />
+</xs:schema>

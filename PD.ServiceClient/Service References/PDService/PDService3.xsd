@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PD.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PD.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="State">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ModelState" type="tns:ModelState" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="State" nillable="true" type="tns:State" />
+  <xs:simpleType name="ModelState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Add" />
+      <xs:enumeration value="Edit" />
+      <xs:enumeration value="Delete">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ModelState" nillable="true" type="tns:ModelState" />
+  <xs:complexType name="ArrayOfT_Ds_ReplaceHouseMaterial">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Ds_ReplaceHouseMaterial" nillable="true" type="tns:T_Ds_ReplaceHouseMaterial" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Ds_ReplaceHouseMaterial" nillable="true" type="tns:ArrayOfT_Ds_ReplaceHouseMaterial" />
+  <xs:complexType name="T_Ds_ReplaceHouseMaterial">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:State">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LastTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialID" nillable="true" type="xs:string" />
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ProductName" nillable="true" type="q1:ArrayOfstring" />
+          <xs:element minOccurs="0" name="ReplaceId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReplaceName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_Ds_ReplaceHouseMaterial" nillable="true" type="tns:T_Ds_ReplaceHouseMaterial" />
+  <xs:complexType name="ArrayOfT_Pb_Content">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Pb_Content" nillable="true" type="tns:T_Pb_Content" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Pb_Content" nillable="true" type="tns:ArrayOfT_Pb_Content" />
+  <xs:complexType name="T_Pb_Content">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:State">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content_Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Content_id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Content_name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Content_path" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Content_time" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_Pb_Content" nillable="true" type="tns:T_Pb_Content" />
+  <xs:complexType name="ArrayOfT_BASE_AREA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_BASE_AREA" nillable="true" type="tns:T_BASE_AREA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_BASE_AREA" nillable="true" type="tns:ArrayOfT_BASE_AREA" />
+  <xs:complexType name="T_BASE_AREA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FatherAreaID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_BASE_AREA" nillable="true" type="tns:T_BASE_AREA" />
+  <xs:complexType name="ArrayOfT_PB_ROLE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_PB_ROLE" nillable="true" type="tns:T_PB_ROLE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_PB_ROLE" nillable="true" type="tns:ArrayOfT_PB_ROLE" />
+  <xs:complexType name="T_PB_ROLE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_PB_ROLE" nillable="true" type="tns:T_PB_ROLE" />
+  <xs:complexType name="ArrayOfT_Ds_House">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Ds_House" nillable="true" type="tns:T_Ds_House" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Ds_House" nillable="true" type="tns:ArrayOfT_Ds_House" />
+  <xs:complexType name="T_Ds_House">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:State">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HouseMaterials" nillable="true" type="tns:ArrayOfT_Ds_HouseMaterial" />
+          <xs:element minOccurs="0" name="IsShowLine" type="xs:int" />
+          <xs:element minOccurs="0" name="IsZip" type="xs:int" />
+          <xs:element minOccurs="0" name="LastTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MainHeight" type="xs:int" />
+          <xs:element minOccurs="0" name="MainSizeScale" type="xs:int" />
+          <xs:element minOccurs="0" name="MainWidth" type="xs:int" />
+          <xs:element minOccurs="0" name="ProductType" type="xs:int" />
+          <xs:element minOccurs="0" name="StyleTypeId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="designCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="designId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="designName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="designPath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="designRemark" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_Ds_House" nillable="true" type="tns:T_Ds_House" />
+  <xs:complexType name="ArrayOfT_Ds_HouseMaterial">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Ds_HouseMaterial" nillable="true" type="tns:T_Ds_HouseMaterial" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Ds_HouseMaterial" nillable="true" type="tns:ArrayOfT_Ds_HouseMaterial" />
+  <xs:complexType name="T_Ds_HouseMaterial">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:State">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Height" type="xs:int" />
+          <xs:element minOccurs="0" name="IsDefault" type="xs:int" />
+          <xs:element minOccurs="0" name="LastTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialPath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialTypeID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialTypeName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ProductName" nillable="true" type="q2:ArrayOfstring" />
+          <xs:element minOccurs="0" name="ReplaceHouseMaterials" nillable="true" type="tns:ArrayOfT_Ds_ReplaceHouseMaterial" />
+          <xs:element minOccurs="0" name="Width" type="xs:int" />
+          <xs:element minOccurs="0" name="XCoordinate" type="xs:int" />
+          <xs:element minOccurs="0" name="YCoordinate" type="xs:int" />
+          <xs:element minOccurs="0" name="ZIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="designId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_Ds_HouseMaterial" nillable="true" type="tns:T_Ds_HouseMaterial" />
+  <xs:complexType name="ArrayOfT_Base_Update">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Base_Update" nillable="true" type="tns:T_Base_Update" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Base_Update" nillable="true" type="tns:ArrayOfT_Base_Update" />
+  <xs:complexType name="T_Base_Update">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UpdateID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateType" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_Base_Update" nillable="true" type="tns:T_Base_Update" />
+</xs:schema>

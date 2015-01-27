@@ -1,0 +1,14 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_PDService" maxReceivedMessageSize="2147483647" />
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost/PD.Services/PDService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_PDService"
+                contract="PDService.PDService" name="BasicHttpBinding_PDService" />
+        </client>
+    </system.serviceModel>
+</configuration>

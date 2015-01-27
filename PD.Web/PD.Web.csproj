@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0F4D7786-7E82-4530-966E-8D4694E95B38}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PD.Web</RootNamespace>
+    <AssemblyName>PD.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightApplicationList>{C22366F1-451B-492E-BA67-5B02FCDFE769}|..\PD\PD.csproj|ClientBin|False</SilverlightApplicationList>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientBin\Images\BasicData\Auto.png" />
+    <Content Include="ClientBin\Images\BasicData\Fixed.png" />
+    <Content Include="ClientBin\Images\Common\download.png" />
+    <Content Include="ClientBin\Images\Common\activity_window_16.png" />
+    <Content Include="ClientBin\Images\Common\back.png" />
+    <Content Include="ClientBin\Images\Common\cancel.png" />
+    <Content Include="ClientBin\Images\Common\default.png" />
+    <Content Include="ClientBin\Images\Common\globe_download.png" />
+    <Content Include="ClientBin\Images\Common\message.png" />
+    <Content Include="ClientBin\Images\Common\next.png" />
+    <Content Include="ClientBin\Images\Common\page_search.png" />
+    <Content Include="ClientBin\Images\Common\question-octagon-frame.png" />
+    <Content Include="ClientBin\Images\Common\sound.png" />
+    <Content Include="ClientBin\Images\Common\warn.png" />
+    <Content Include="ClientBin\Images\Common\wrench.png" />
+    <Content Include="ClientBin\Images\Common\onLineView.png" />
+    <Content Include="ClientBin\Images\Common\view.png" />
+    <Content Include="ClientBin\Images\FileType\application.png" />
+    <Content Include="ClientBin\Images\FileType\index_counte.png" />
+    <Content Include="ClientBin\Images\FileType\index_countf.png" />
+    <Content Include="ClientBin\Images\FileType\other.png" />
+    <Content Include="ClientBin\Images\FileType\page_link.png" />
+    <Content Include="ClientBin\Images\FileType\page_white_powerpoint.png" />
+    <Content Include="ClientBin\Images\FileType\page_white_text.png" />
+    <Content Include="ClientBin\Images\FileType\PDF.png" />
+    <Content Include="ClientBin\Images\FileType\picture.png" />
+    <Content Include="ClientBin\Images\FileType\png.png" />
+    <Content Include="ClientBin\Images\FileType\ppt.png" />
+    <Content Include="ClientBin\Images\FileType\report.png" />
+    <Content Include="ClientBin\Images\FileType\report_word.png" />
+    <Content Include="ClientBin\Images\FileType\txt.png" />
+    <Content Include="ClientBin\Images\FileType\vsd.png" />
+    <Content Include="ClientBin\Images\FileType\wmv.png" />
+    <Content Include="ClientBin\Images\FileType\word.png" />
+    <Content Include="ClientBin\Images\FileType\xls.png" />
+    <Content Include="ClientBin\Images\FileType\zip.png" />
+    <Content Include="ClientBin\Images\FrameWork\Bottom\bottom.jpg" />
+    <Content Include="ClientBin\Images\FrameWork\Bottom\文字.png" />
+    <Content Include="ClientBin\Images\FrameWork\Design\01.png" />
+    <Content Include="ClientBin\Images\FrameWork\Design\arrow_down %282%29.png" />
+    <Content Include="ClientBin\Images\FrameWork\Design\arrow_next %282%29.png" />
+    <Content Include="ClientBin\Images\FrameWork\Design\type.png" />
+    <Content Include="ClientBin\Images\FrameWork\Design\name.png" />
+    <Content Include="ClientBin\Images\FrameWork\InitPage\KB.png" />
+    <Content Include="ClientBin\Images\FrameWork\InitPage\QK.png" />
+    <Content Include="ClientBin\Images\FrameWork\InitPage\主画面.png" />
+    <Content Include="ClientBin\Images\FrameWork\InitPage\按钮.png" />
+    <Content Include="ClientBin\Images\FrameWork\InitPage\文字.png" />
+    <Content Include="ClientBin\Images\FrameWork\InitPage\背景.jpg" />
+    <Content Include="ClientBin\Images\FrameWork\Login\back.png" />
+    <Content Include="ClientBin\Images\FrameWork\Navigation\企业资料查看.png" />
+    <Content Include="ClientBin\Images\FrameWork\Navigation\企业资料维护.png" />
+    <Content Include="ClientBin\Images\FrameWork\Login\LOGO.png" />
+    <Content Include="ClientBin\Images\FrameWork\Login\密码.png" />
+    <Content Include="ClientBin\Images\FrameWork\Login\按钮1.png" />
+    <Content Include="ClientBin\Images\FrameWork\Login\按钮2.png" />
+    <Content Include="ClientBin\Images\FrameWork\Login\窗口.png" />
+    <Content Include="ClientBin\Images\FrameWork\Login\背景.jpg" />
+    <Content Include="ClientBin\Images\FrameWork\Login\账号.png" />
+    <Content Include="ClientBin\Images\FrameWork\Load.png" />
+    <Content Include="ClientBin\Images\FrameWork\logo.png" />
+    <Content Include="ClientBin\Images\FrameWork\Navigation\1.png" />
+    <Content Include="ClientBin\Images\FrameWork\Navigation\2.png" />
+    <Content Include="ClientBin\Images\FrameWork\Navigation\3.png" />
+    <Content Include="ClientBin\Images\FrameWork\Navigation\4.png" />
+    <Content Include="ClientBin\Images\FrameWork\Navigation\5.png" />
+    <Content Include="ClientBin\Images\FrameWork\Navigation\6.png" />
+    <Content Include="ClientBin\Images\FrameWork\Navigation\left.png" />
+    <Content Include="ClientBin\Images\FrameWork\Navigation\业务管理.png" />
+    <Content Include="ClientBin\Images\FrameWork\Navigation\基础数据管理.png" />
+    <Content Include="ClientBin\Images\FrameWork\Navigation\室内效果展示.png" />
+    <Content Include="ClientBin\Images\FrameWork\Navigation\室内效果设计.png" />
+    <Content Include="ClientBin\Images\FrameWork\Navigation\策划信息.png" />
+    <Content Include="ClientBin\Images\FrameWork\Navigation\财务管理.png" />
+    <Content Include="ClientBin\Images\FrameWork\nav_left.png" />
+    <Content Include="ClientBin\Images\FrameWork\Top\Install.png" />
+    <Content Include="ClientBin\Images\FrameWork\Top\loginOut.png" />
+    <Content Include="ClientBin\Images\FrameWork\Top\Profile.png" />
+    <Content Include="ClientBin\Images\FrameWork\Top\TopBg.jpg" />
+    <Content Include="ClientBin\Images\FrameWork\Top\world.png" />
+    <Content Include="ClientBin\Images\FrameWork\WebContentLayout.jpg" />
+    <Content Include="ClientBin\Images\FrameWork\智能集成吊顶.png" />
+    <Content Include="ClientBin\Images\FrameWork\登陆验证.png" />
+    <Content Include="ClientBin\Images\FrameWork\集成墙面.png" />
+    <Content Include="ClientBin\Images\FrameWork\验证失败.png" />
+    <Content Include="ClientBin\PD.xap" />
+    <Content Include="Silverlight.exe" />
+    <Content Include="SLMedallion_CHS.png" />
+    <Content Include="PD.html" />
+    <Content Include="Resource\Config\ConstantConfiguration.txt" />
+    <Content Include="Resource\Config\WcfConfiguration.txt" />
+    <Content Include="Silverlight.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Main.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3423</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/PD.Web</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

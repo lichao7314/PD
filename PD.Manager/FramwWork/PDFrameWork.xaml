@@ -1,0 +1,325 @@
+﻿<UserControl x:Class="PD.Manager.FramwWork.PDFrameWork"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="1200"
+             xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+             xmlns:my1="clr-namespace:PD.Controls;assembly=PD.Controls"
+             Loaded="UserControl_Loaded">
+    <UserControl.Resources>    
+        <LinearGradientBrush EndPoint="0.5,1"
+                             x:Key="gxLoginBackBrush"
+                             StartPoint="0.5,0">
+            <GradientStop Color="#FF010AAA"
+                          Offset="0" />
+            <GradientStop Color="#FF2978ED"
+                          Offset="0.526" />
+            <GradientStop Color="#FFABCFFF"
+                          Offset="1" />
+        </LinearGradientBrush>
+        <SolidColorBrush Color="#FF2145F1"
+                         x:Key="gxInputBorderBrush"></SolidColorBrush>
+        <SolidColorBrush x:Key="gxButtonBorderBrush"
+                         Color="#CA22346C"></SolidColorBrush>
+        <LinearGradientBrush EndPoint="0.5,1"
+                             x:Key="gxButNormalBrush"
+                             StartPoint="0.5,0">
+            <GradientStop Color="#FF4496AC" />
+            <GradientStop Color="#FF2F7EA5"
+                          Offset="0.533" />
+            <GradientStop Color="#FF155B7D"
+                          Offset="0.993" />
+            <GradientStop Color="#FF20698C"
+                          Offset="0.498" />
+            <GradientStop Color="#FF28839E"
+                          Offset="0.27" />
+        </LinearGradientBrush>
+        <LinearGradientBrush EndPoint="0.5,1"
+                             x:Key="gxButPressBrush"
+                             StartPoint="0.5,0">
+            <GradientStop Color="#FF72B2CD" />
+            <GradientStop Color="#FF43A6D8"
+                          Offset="0.523" />
+            <GradientStop Color="#FF2376A1"
+                          Offset="1" />
+            <GradientStop Color="#FF287F9B"
+                          Offset="0.498" />
+        </LinearGradientBrush>
+        <LinearGradientBrush EndPoint="0.5,1"
+                             x:Key="gxButMoveBrush"
+                             StartPoint="0.5,0">
+            <GradientStop Color="#FF226E94" />
+            <GradientStop Color="#FF2E7CA3"
+                          Offset="0.523" />
+            <GradientStop Color="#FF165A7D"
+                          Offset="1" />
+            <GradientStop Color="#FF2F84AD"
+                          Offset="0.498" />
+        </LinearGradientBrush>
+        <Style x:Key="LoginStyle"
+               TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Disabled" />
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                           Storyboard.TargetName="border">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                           Storyboard.TargetName="border_Move">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                           Storyboard.TargetName="border">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                           Storyboard.TargetName="border_Press">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="border"
+                                    BorderThickness="1"
+                                    BorderBrush="#DAFFFFFF"
+                                    Background="{StaticResource gxButNormalBrush}"
+                                    CornerRadius="5" />
+                            <Border x:Name="border_Move"
+                                    BorderBrush="{StaticResource gxButtonBorderBrush}"
+                                    Background="{StaticResource gxButPressBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="2"
+                                    Visibility="Collapsed" />
+                            <Border x:Name="border_Press"
+                                    BorderBrush="{StaticResource gxButtonBorderBrush}"
+                                    Background="{StaticResource gxButPressBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="2"
+                                    Visibility="Collapsed">
+
+                            </Border>
+                            <Border BorderThickness="1"
+                                    CornerRadius="5"
+                                    Opacity="0.7"
+                                    Margin="1">
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush EndPoint="0.5,1"
+                                                         StartPoint="0.5,0">
+                                        <GradientStop Color="#97FFFFFF"
+                                                      Offset="0" />
+                                        <GradientStop Color="#A7FFFFFF"
+                                                      Offset="1" />
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                            </Border>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Storyboard x:Name="Storyboard1" AutoReverse="True" RepeatBehavior="Forever">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="linkImage">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:10" Value="500"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <toolkit:BusyIndicator  Style="{StaticResource frameworkLoadModuleStyle}"
+                            x:Name="busyIndicator"
+                            IsHitTestVisible="True">
+        <toolkit:BusyIndicator.BusyContent>
+            <Grid>
+                <TextBlock Text="加载中..."
+                           Foreground="Black"
+                           x:Name="txLoadModule"></TextBlock>
+            </Grid>
+        </toolkit:BusyIndicator.BusyContent>
+        <Grid x:Name="panelMain">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+  
+            <Grid Height="65"> 
+
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Stretch="Fill"
+                       Source="/Images/FrameWork/Top/TopBg.jpg"
+                       Grid.RowSpan="2" ></Image>
+                <StackPanel     VerticalAlignment="Center"
+                                Margin="20,0,0,0"  Grid.RowSpan="2" Orientation="Horizontal">
+                    <Image HorizontalAlignment="Left"
+                           Height="35"
+                           VerticalAlignment="Center"
+                           Source="/Images/FrameWork/logo.png"></Image>
+
+                    <Image  Margin="20,0,0,0" VerticalAlignment="Center"
+                           Height="30" x:Name="imgType"
+                           Source="/Images/FrameWork/logo.png"></Image>
+                </StackPanel>
+                <!--<Image  Stretch="None"
+                        HorizontalAlignment="Right"
+                        Grid.RowSpan="2" 
+                        VerticalAlignment="Top"
+                        Source="/Images/FrameWork/top_right.png"></Image>-->
+
+
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            Grid.RowSpan="2"
+                            HorizontalAlignment="Right"
+                            Margin="0,0,20,0">
+                    <HyperlinkButton  VerticalAlignment="Center"
+                                      x:Name="btnDownLoad"
+                                      Foreground="Black"
+                                      HorizontalAlignment="Center"
+                                      Cursor="Hand">
+                        <StackPanel  Cursor="Hand"
+                                     Margin="20,0"
+                                     Orientation="Vertical">
+                            <Image Source="/Images/FrameWork/Top/world.png"
+                                   Stretch="None"
+                                   Width="30"
+                                   Height="30"></Image>
+                            <TextBlock VerticalAlignment="Center"
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       Text="下载平板App"></TextBlock>
+                        </StackPanel>
+                    </HyperlinkButton>
+
+                    <StackPanel  Cursor="Hand"
+                                 Margin="20,0"
+                                 x:Name="btnInstall"
+                                 Orientation="Vertical">
+                        <Image Source="/Images/FrameWork/Top/Install.png"
+                               Stretch="None"
+                               Width="30"
+                               Height="30"
+                               Margin="0,0,0,0"></Image>
+                        <TextBlock VerticalAlignment="Center"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   Text="安装到本地"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel  Cursor="Hand"
+                                 x:Name="panelUser"
+                                 Margin="20,0"
+                                 Orientation="Vertical">
+                        <Image Source="/Images/FrameWork/Top/Profile.png"
+                               Stretch="None"
+                               Width="30"
+                               Height="30"
+                               Margin="0,0,0,0"></Image>
+                        <TextBlock VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Text="李超"
+                                   Foreground="White"
+                                   x:Name="tbUserName"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel  Cursor="Hand"
+                                 Margin="20,0"
+                                 Orientation="Vertical">
+                        <Image Source="/Images/FrameWork/Top/loginOut.png"
+                               Stretch="None"
+                               Width="30"
+                               Height="30"
+                               Margin="0,0,0,0"></Image>
+                        <HyperlinkButton  VerticalAlignment="Center"
+                                          Content="注销"
+                                          x:Name="btnLogout"
+                                          Foreground="White"
+                                          HorizontalAlignment="Center"
+                                          Cursor="Hand"></HyperlinkButton>
+                    </StackPanel>
+
+                </StackPanel>
+            </Grid>
+
+            <my1:ModuleAreaPanel PanelType="MenuArea"
+                                 x:Name="returnPanel"
+                                 Grid.Row="1">
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <Image  Cursor="Hand"
+                            x:Name="btnReturn"
+                            Margin="4,0,0,2"
+                            Width="25"
+                            Height="25"
+                            Source="/Images/FrameWork/Navigation/left.png"
+                            Stretch="None" />
+                    <TextBlock  x:Name="tbMenu"
+                                VerticalAlignment="Center"
+                                Margin="10,0,0,0"
+                                FontSize="15"
+                                FontWeight="Bold"></TextBlock>
+                </StackPanel>
+            </my1:ModuleAreaPanel>
+
+
+            <ContentPresenter x:Name="businessContent"
+                              Grid.Row="2"></ContentPresenter>
+
+            <Grid Grid.Row="3"  >
+                <Image  Source="/Images/FrameWork/Bottom/bottom.jpg"
+                      Height="35"
+                     Stretch="Fill" />
+                <HyperlinkButton  VerticalAlignment="Center" 
+                                      x:Name="linkImage" RenderTransformOrigin="0.5,0.5"
+                                      HorizontalAlignment="Left"
+                                      Cursor="Hand">
+                    <HyperlinkButton.RenderTransform>
+                        <CompositeTransform/>
+                    </HyperlinkButton.RenderTransform>
+                    <Image    Source="/Images/FrameWork/Bottom/文字.png" 
+                       Stretch="None"   Margin="0" >
+                  
+                </Image>
+                </HyperlinkButton>
+            </Grid>
+        </Grid>
+    </toolkit:BusyIndicator>
+
+</UserControl>

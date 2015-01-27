@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="PD.Controls.ReportView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="1200" d:DesignWidth="1200">
+
+    <Grid x:Name="root">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid x:Name="LayoutRoot" Visibility="Collapsed">
+          
+            <Grid.Background>
+                <ImageBrush ImageSource="/Images/FrameWork/WebContentLayout.jpg"
+                            Stretch="UniformToFill"
+                            Opacity="0.4" />
+            </Grid.Background>
+            <Grid HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  x:Name="gridInfo">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="Auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock Foreground="#FF009CFF"
+                           FontSize="300"
+                           Opacity="0.2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontFamily="Arial Black"
+                           Margin="0,-88,0,88">MES</TextBlock>
+                <TextBlock Foreground="#FF009CFF"
+                           FontSize="100"
+                           Opacity="0.2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontFamily="Arial Black"
+                           Margin="297,229,-31,53">Desktop</TextBlock>
+                <TextBlock   VerticalAlignment="Top"
+                             HorizontalAlignment="Center"
+                             FontSize="16"
+                             Grid.Row="1">
+            <Run  Text="["></Run>
+            <Run x:Name="message"></Run>
+                 <Run Text="]正在等待您的下一步操作。"></Run>
+                </TextBlock>
+            </Grid>
+        </Grid>
+    </Grid>
+   
+</UserControl>

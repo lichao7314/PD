@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PD.Model.Design.Main" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PD.Model.Design.Main" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/PD.Model" />
+  <xs:complexType name="ArrayOfT_HouseTypeInStyle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_HouseTypeInStyle" nillable="true" type="tns:T_HouseTypeInStyle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_HouseTypeInStyle" nillable="true" type="tns:ArrayOfT_HouseTypeInStyle" />
+  <xs:complexType name="T_HouseTypeInStyle">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/PD.Model" base="q1:State">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HouseStyleCollection" nillable="true" type="tns:ArrayOfT_HouseStyle" />
+          <xs:element minOccurs="0" name="HouseTyleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HouseTypeId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductCount" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_HouseTypeInStyle" nillable="true" type="tns:T_HouseTypeInStyle" />
+  <xs:complexType name="ArrayOfT_HouseStyle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_HouseStyle" nillable="true" type="tns:T_HouseStyle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_HouseStyle" nillable="true" type="tns:ArrayOfT_HouseStyle" />
+  <xs:complexType name="T_HouseStyle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HouseStyleId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HouseStyleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductCount" type="xs:int" />
+      <xs:element minOccurs="0" name="StyleTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_HouseStyle" nillable="true" type="tns:T_HouseStyle" />
+</xs:schema>

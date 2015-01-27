@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PD.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PD.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfT_Msg">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Msg" nillable="true" type="tns:T_Msg" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Msg" nillable="true" type="tns:ArrayOfT_Msg" />
+  <xs:complexType name="T_Msg">
+    <xs:sequence>
+      <xs:element name="_msgconnect" nillable="true" type="xs:string" />
+      <xs:element name="_msgid" nillable="true" type="xs:string" />
+      <xs:element name="_msgovertime" nillable="true" type="xs:dateTime" />
+      <xs:element name="_msgovertype" nillable="true" type="xs:int" />
+      <xs:element name="_msgsendtime" type="xs:dateTime" />
+      <xs:element name="_msgtype" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_Msg" nillable="true" type="tns:T_Msg" />
+  <xs:complexType name="ArrayOfT_Pb_RoleModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Pb_RoleModel" nillable="true" type="tns:T_Pb_RoleModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Pb_RoleModel" nillable="true" type="tns:ArrayOfT_Pb_RoleModel" />
+  <xs:complexType name="T_Pb_RoleModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_Pb_RoleModel" nillable="true" type="tns:T_Pb_RoleModel" />
+  <xs:complexType name="ArrayOfUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserInfo" nillable="true" type="tns:UserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserInfo" nillable="true" type="tns:ArrayOfUserInfo" />
+  <xs:complexType name="UserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Role" nillable="true" type="tns:T_Pb_RoleModel" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:T_Pb_UserModel" />
+      <xs:element minOccurs="0" name="UserBusiness" nillable="true" type="tns:T_Pb_UserBusinessModel" />
+      <xs:element minOccurs="0" name="UserRole" nillable="true" type="tns:T_Pb_UserRoleModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserInfo" nillable="true" type="tns:UserInfo" />
+  <xs:complexType name="T_Pb_UserModel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ModelState">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsAcceptAlarm" type="xs:int" />
+          <xs:element minOccurs="0" name="IsLock" type="xs:int" />
+          <xs:element minOccurs="0" name="PassWord" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserImgUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserSex" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="UserType" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_Pb_UserModel" nillable="true" type="tns:T_Pb_UserModel" />
+  <xs:complexType name="ModelState">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="State" type="tns:State" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModelState" nillable="true" type="tns:ModelState" />
+  <xs:simpleType name="State">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Insert" />
+      <xs:enumeration value="Update" />
+      <xs:enumeration value="Delete" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="State" nillable="true" type="tns:State" />
+  <xs:complexType name="T_Pb_UserBusinessModel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ModelState">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PB_BusinessTypeId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pb_UserBusinessId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_Pb_UserBusinessModel" nillable="true" type="tns:T_Pb_UserBusinessModel" />
+  <xs:complexType name="T_Pb_UserRoleModel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ModelState">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Pb_UserRoleId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_Pb_UserRoleModel" nillable="true" type="tns:T_Pb_UserRoleModel" />
+  <xs:complexType name="ArrayOfT_Pb_UserModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Pb_UserModel" nillable="true" type="tns:T_Pb_UserModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Pb_UserModel" nillable="true" type="tns:ArrayOfT_Pb_UserModel" />
+  <xs:complexType name="ArrayOfUserDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserDetail" nillable="true" type="tns:UserDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserDetail" nillable="true" type="tns:ArrayOfUserDetail" />
+  <xs:complexType name="UserDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:UserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserDetail" nillable="true" type="tns:UserDetail" />
+  <xs:complexType name="ArrayOfT_Pb_UserRoleModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Pb_UserRoleModel" nillable="true" type="tns:T_Pb_UserRoleModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Pb_UserRoleModel" nillable="true" type="tns:ArrayOfT_Pb_UserRoleModel" />
+  <xs:complexType name="ArrayOfPopedomTree">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PopedomTree" nillable="true" type="tns:PopedomTree" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPopedomTree" nillable="true" type="tns:ArrayOfPopedomTree" />
+  <xs:complexType name="PopedomTree">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChildMenus" nillable="true" type="tns:ArrayOfPopedomTree" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PopedomTree" nillable="true" type="tns:PopedomTree" />
+  <xs:complexType name="ArrayOfNewListView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NewListView" nillable="true" type="tns:NewListView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNewListView" nillable="true" type="tns:ArrayOfNewListView" />
+  <xs:complexType name="NewListView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Image" type="xs:int" />
+      <xs:element minOccurs="0" name="NewItem" nillable="true" type="tns:T_PB_NewList" />
+      <xs:element minOccurs="0" name="NewTypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewListView" nillable="true" type="tns:NewListView" />
+  <xs:complexType name="T_PB_NewList">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ModelState">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CreateUserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FileList" nillable="true" type="tns:ArrayOfT_PB_NewFileList" />
+          <xs:element minOccurs="0" name="IsPriorTop" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IsTop" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="IsWeb" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LastDateTime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastUserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MsgContent" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MsgTitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PB_BusinessTypeId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PB_NEWSTYPEID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PB_NewList" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TopEndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ViewModel" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_PB_NewList" nillable="true" type="tns:T_PB_NewList" />
+  <xs:complexType name="ArrayOfT_PB_NewFileList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_PB_NewFileList" nillable="true" type="tns:T_PB_NewFileList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_PB_NewFileList" nillable="true" type="tns:ArrayOfT_PB_NewFileList" />
+  <xs:complexType name="T_PB_NewFileList">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ModelState">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FileAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FileBitSize" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FileType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PB_NewFileListId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PB_NewList" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_PB_NewFileList" nillable="true" type="tns:T_PB_NewFileList" />
+  <xs:complexType name="ArrayOfT_PB_NewList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_PB_NewList" nillable="true" type="tns:T_PB_NewList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_PB_NewList" nillable="true" type="tns:ArrayOfT_PB_NewList" />
+  <xs:complexType name="ReleaseQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsQueryTime" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReleaseName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReleaseQuery" nillable="true" type="tns:ReleaseQuery" />
+  <xs:complexType name="ArrayOfNewReleaseDetailItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NewReleaseDetailItem" nillable="true" type="tns:NewReleaseDetailItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNewReleaseDetailItem" nillable="true" type="tns:ArrayOfNewReleaseDetailItem" />
+  <xs:complexType name="NewReleaseDetailItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InfoTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewItem" nillable="true" type="tns:T_PB_NewList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewReleaseDetailItem" nillable="true" type="tns:NewReleaseDetailItem" />
+  <xs:complexType name="Txt">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndPosition" type="xs:int" />
+      <xs:element minOccurs="0" name="ReadCompleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReadLength" type="xs:int" />
+      <xs:element minOccurs="0" name="TxtByte" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Txt" nillable="true" type="tns:Txt" />
+  <xs:complexType name="UserObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsAcceptAlarm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLock" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLogic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSuper" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MenuList" nillable="true" type="tns:ArrayOfMenu" />
+      <xs:element minOccurs="0" name="PB_BusinessTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PB_BusinessTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PB_BusinessTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserImgUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserSex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserType" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserObject" nillable="true" type="tns:UserObject" />
+  <xs:complexType name="ArrayOfMenu">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Menu" nillable="true" type="tns:Menu" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMenu" nillable="true" type="tns:ArrayOfMenu" />
+  <xs:complexType name="Menu">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChildMenu" nillable="true" type="tns:ArrayOfChildMenu" />
+      <xs:element minOccurs="0" name="MenuAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MenuId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MenuName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Menu" nillable="true" type="tns:Menu" />
+  <xs:complexType name="ArrayOfChildMenu">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChildMenu" nillable="true" type="tns:ChildMenu" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChildMenu" nillable="true" type="tns:ArrayOfChildMenu" />
+  <xs:complexType name="ChildMenu">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ControlCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ControlName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChildMenu" nillable="true" type="tns:ChildMenu" />
+  <xs:complexType name="ArrayOfExpandAlarm">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExpandAlarm" nillable="true" type="tns:ExpandAlarm" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpandAlarm" nillable="true" type="tns:ArrayOfExpandAlarm" />
+  <xs:complexType name="ExpandAlarm">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Expand">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsCheck" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PB_BusinessTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExpandAlarm" nillable="true" type="tns:ExpandAlarm" />
+  <xs:complexType name="Expand">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpandItem" nillable="true" type="tns:T_Pl_Expand" />
+      <xs:element minOccurs="0" name="No" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Expand" nillable="true" type="tns:Expand" />
+  <xs:complexType name="T_Pl_Expand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ModelState">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ExState" type="xs:int" />
+          <xs:element minOccurs="0" name="ExecuteState" type="xs:int" />
+          <xs:element minOccurs="0" name="PB_CustomerInformationId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PL_TaskId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pl_ExpandId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_Pl_Expand" nillable="true" type="tns:T_Pl_Expand" />
+  <xs:complexType name="ArrayOfT_Pl_Expand">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Pl_Expand" nillable="true" type="tns:T_Pl_Expand" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Pl_Expand" nillable="true" type="tns:ArrayOfT_Pl_Expand" />
+</xs:schema>

@@ -1,0 +1,11 @@
+﻿<ResourceDictionary          xmlns:sd="clr-namespace:System.Windows.Media;assembly=System.Windows"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <system:Double x:Key="MenuAreaFontSize">12</system:Double>
+    <system:Double x:Key="ToolBarAreaFontSize">12</system:Double>
+    <system:Double x:Key="QueryAreaFontSize">12</system:Double>
+    <system:Double x:Key="DataAreaFontSize">12</system:Double>
+    <system:Double x:Key="applicationFontsize">12</system:Double>
+    <system:Int32 x:Key="pageSize">10</system:Int32>
+</ResourceDictionary>

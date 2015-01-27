@@ -1,0 +1,35 @@
+﻿<controls:ChildWindow x:Class="PD.Controls.PopupExceptionWindow"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Height="Auto"  Width="450" MaxWidth="450"
+           Title="信息" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+                     >
+    <Grid x:Name="LayoutRoot" Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*" />
+            <RowDefinition x:Name="LayoutRoot_R1C0" Height="30*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        
+        <Button x:Name="OKButton" Content="确定" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,4,30,0" Grid.Row="2" VerticalAlignment="Top" />
+
+        <Button RenderTransformOrigin="0.2,0.4" Content="▶"  Height="26"   HorizontalAlignment="Right" Margin="0,0,0,0" Name="btnShowStack" VerticalAlignment="Bottom" Width="15" Click="btnShowStack_Click" VerticalContentAlignment="Center" >
+            <Button.RenderTransform>
+                <RotateTransform Angle="90" CenterX="0" CenterY="0"></RotateTransform>
+            </Button.RenderTransform>
+        </Button>
+
+        <Grid x:Name="GridSeparator" Grid.Row="2" VerticalAlignment="Top" Width="Auto" MinWidth="25">
+            <StackPanel>
+                <Rectangle Stroke="#FF1E1E1E" StrokeThickness="1" Height="1" Margin="2,0,2,0"/>
+                <Rectangle Stroke="White" StrokeThickness="1" Height="1"  Margin="2,0,2,0"/>
+            </StackPanel>
+        </Grid>
+        
+        <!--<TextBox Grid.Row="0" Height="Auto" HorizontalAlignment="Left" Margin="30,10,40,20" Name="txtMessage" VerticalAlignment="Top" BorderThickness="0" Background="{x:Null}" Text="dfsdfsdfsdfsdfsfafsdagtreyjkljkljlhjluimgjghjghjg" MinWidth="200" TextWrapping="Wrap" UseLayoutRounding="True" BorderBrush="{x:Null}" IsReadOnly="False" IsEnabled="True" Visibility="Collapsed" />
+        <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0"  Margin="30,10,40,10" Height="Auto" HorizontalAlignment="Left" IsEnabled="True" IsReadOnly="False" MinWidth="200" Name="txtStack" SelectionBackground="{x:Null}" SelectionForeground="{x:Null}" Text="aaa" TextWrapping="Wrap" UseLayoutRounding="True" VerticalAlignment="Top" Grid.Row="1" Visibility="Collapsed" />-->
+        <RichTextBox Name="richTxtMessage" HorizontalAlignment="Left" Margin="20,8,40,20"  VerticalAlignment="Top" Width="Auto" IsReadOnly="True" BorderThickness="0" Background="{x:Null}" >  </RichTextBox>
+        <RichTextBox Name="richTxtStack" Width="450" MaxWidth="450" Height="Auto" MaxHeight="300" Grid.Row="1" HorizontalAlignment="Left" Margin="20,1,40,3"  VerticalAlignment="Top" IsReadOnly="True" BorderThickness="0" Background="{x:Null}" ></RichTextBox>
+    </Grid>
+</controls:ChildWindow>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PD.Model.UserLogin" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PD.Model.UserLogin" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/PD.Model.BaseData" />
+  <xs:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/PD.Model" />
+  <xs:complexType name="T_PB_USER">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/PD.Model" base="q1:State">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AreaID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsLogic" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsLogin" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LoginDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LoginType" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="LoginTypeDesc" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PD.Model.BaseData" minOccurs="0" name="MenuList" nillable="true" type="q2:ArrayOfT_BASE_MENU" />
+          <xs:element minOccurs="0" name="PassWord" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductType" type="xs:int" />
+          <xs:element minOccurs="0" name="ProviceName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sex" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SexDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TimeOut" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UserCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_PB_USER" nillable="true" type="tns:T_PB_USER" />
+  <xs:complexType name="ArrayOfT_PB_USER">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_PB_USER" nillable="true" type="tns:T_PB_USER" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_PB_USER" nillable="true" type="tns:ArrayOfT_PB_USER" />
+  <xs:complexType name="UserObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsAcceptAlarm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLock" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLogic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSuper" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PD.Model.BaseData" minOccurs="0" name="MenuList" nillable="true" type="q3:ArrayOfMenu" />
+      <xs:element minOccurs="0" name="PB_BusinessTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PB_BusinessTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PB_BusinessTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserImgUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserSex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserType" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserObject" nillable="true" type="tns:UserObject" />
+</xs:schema>

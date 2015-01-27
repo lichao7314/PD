@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PD.Model.Product" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PD.Model.Product" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/PD.Model" />
+  <xs:complexType name="ArrayOfT_Base_Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Base_Product" nillable="true" type="tns:T_Base_Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Base_Product" nillable="true" type="tns:ArrayOfT_Base_Product" />
+  <xs:complexType name="T_Base_Product">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/PD.Model" base="q1:State">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DesignPath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Designs" nillable="true" type="tns:ArrayOfT_Base_Productinhouse" />
+          <xs:element minOccurs="0" name="LastTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastTimeString" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductDetail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductIcoPath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductImagePath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductType" type="xs:int" />
+          <xs:element minOccurs="0" name="StyleId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="designId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_Base_Product" nillable="true" type="tns:T_Base_Product" />
+  <xs:complexType name="ArrayOfT_Base_Productinhouse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Base_Productinhouse" nillable="true" type="tns:T_Base_Productinhouse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Base_Productinhouse" nillable="true" type="tns:ArrayOfT_Base_Productinhouse" />
+  <xs:complexType name="T_Base_Productinhouse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/PD.Model" base="q2:State">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DesignId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DesignName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterialName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaterilId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductInHouseId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_Base_Productinhouse" nillable="true" type="tns:T_Base_Productinhouse" />
+</xs:schema>

@@ -1,0 +1,96 @@
+﻿<a:BaseModulePage x:Class="PD.Manager.FramwWork.PDNavigationPage"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  mc:Ignorable="d"
+                  xmlns:sdk="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+                  xmlns:a="clr-namespace:PD.Controls;assembly=PD.Controls"
+                  d:DesignHeight="300"
+                  d:DesignWidth="400">
+    <Grid  Background="#f4f9ff">
+        <Grid  VerticalAlignment="Center"
+              HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <!--<Image Grid.Row="2"
+                   x:Name="imCWGL"
+                   Visibility="Collapsed"
+                   Stretch="None"
+                   Source="/Images/FrameWork/Navigation/财务管理.png" />
+         
+            <Image  Grid.Row="0"
+                    x:Name="imCHXX"
+                    Visibility="Collapsed"
+                    Stretch="None"
+                    Source="/Images/FrameWork/Navigation/策划信息.png" />
+            
+            <Image  Grid.Row="6"
+                    Visibility="Collapsed"
+                    Stretch="None"
+                    x:Name="imJCSJGL"
+                    Source="/Images/FrameWork/Navigation/基础数据管理.png" />
+          
+            <Image  Grid.Row="4"
+                    x:Name="imYWGL"
+                    Stretch="None"
+                  
+                    Visibility="Collapsed"
+                    Source="/Images/FrameWork/Navigation/业务管理.png" />
+            <TextBlock Text="基础数据"
+                       Margin="30,6,0,0"
+                       Grid.Row="0"
+                       FontWeight="Bold"
+                       Visibility="Collapsed"
+                       FontSize="17"
+                       x:Name="tbCHXX"></TextBlock>
+            <TextBlock Text="产品设计"
+                       Grid.Row="2"
+                       FontWeight="Bold"
+                       Margin="30,6,0,0"
+                       Visibility="Collapsed"
+                       FontSize="17"
+                       x:Name="tbCWGL"></TextBlock>
+            <TextBlock Text="效果展示"
+                       Grid.Row="4"
+                       FontWeight="Bold"
+                       Margin="30,6,0,0"
+                       Visibility="Collapsed"
+                       FontSize="17"
+                       x:Name="tbYWGL"></TextBlock>
+            <TextBlock Text="无"
+                       Grid.Row="6"
+                       Margin="30,6,0,0"
+                       FontWeight="Bold"
+                       Visibility="Collapsed"
+                       FontSize="17"
+                       x:Name="tbJCSJGL"></TextBlock>-->
+           
+            <sdk:WrapPanel Grid.Row="3"
+                           Margin="0,25"
+                           Visibility="Collapsed"
+                           x:Name="panelCWGL"></sdk:WrapPanel>
+            <sdk:WrapPanel Grid.Row="1"
+                           Margin="0,25"
+                           Visibility="Collapsed"
+                           x:Name="panelCHXX"></sdk:WrapPanel>
+            <sdk:WrapPanel Grid.Row="5"
+                           Margin="0,25"
+                           Visibility="Collapsed"
+                           x:Name="panelYWGL">
+            </sdk:WrapPanel>
+            <sdk:WrapPanel Grid.Row="7"
+                           Margin="0,25"
+                           Visibility="Collapsed"
+                           x:Name="panelJCSJ"></sdk:WrapPanel>
+        </Grid>
+ </Grid>
+</a:BaseModulePage>

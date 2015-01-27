@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>绩效考核系统</title>
+    <style type="text/css">
+        html, body
+        {
+            height: 100%;
+            overflow: auto;
+        }
+        body
+        {
+            padding: 0;
+            margin: 0;
+        }
+        #silverlightControlHost
+        {
+            height: 100%;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript" src="Silverlight.js"></script>
+    <script type="text/javascript">
+        function GetIEVersion() {
+            try {
+                if (!window.clientInformation) return false;
+                if (window.clientInformation.appName.toLowerCase() != "microsoft internet explorer") return false;
+                if (window.clientInformation.appVersion.toLowerCase().indexOf("msie") == -1) return false;
+                var a = window.clientInformation.appVersion.toLowerCase().split(";");
+                for (var i = 0; i < a.length; i++) {
+                    a[i] = a[i].replace(" ", "");
+                    if (a[i].indexOf("msie") == 0) {
+                        var version = a[i].substr(4, a[i].indexOf(".") - 2);
+                        return version;
+                    }
+                }
+            }
+            catch (exception) {
+            }
+            return false;
+        }
+        function VailPageState() {
+            if (window.opener == undefined) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        function OpenWindow() {
+
+             var newwin = window.open("Main.html", "", "toolbar=no, menubar=no, scrollbars=no, resizable=yes,location=no, status=no ");
+
+            if (!newwin) {
+                alert("请修改ie 设置，允许本站的弹出窗口！");
+            } else {
+                if (newwin != undefined) {
+                    newwin.moveTo(0, 0);
+                    newwin.resizeTo(screen.availWidth, screen.availHeight);
+                    try {
+                        if (parseInt(GetIEVersion()) >= 7) {
+                            window.open('', '_parent', '');
+                        }
+                        window.close();
+                    } catch (ex) { }
+                }
+            }
+        }
+        OpenWindow();
+    </script>
+    <script type="text/javascript">
+        function onSilverlightError(sender, args) {
+            var appSource = "";
+            if (sender != null && sender != 0) {
+                appSource = sender.getHost().Source;
+            }
+
+            var errorType = args.ErrorType;
+            var iErrorCode = args.ErrorCode;
+
+            if (errorType == "ImageError" || errorType == "MediaError") {
+                return;
+            }
+
+            var errMsg = "Silverlight 应用程序中未处理的错误 " + appSource + "\n";
+
+            errMsg += "代码: " + iErrorCode + "    \n";
+            errMsg += "类别: " + errorType + "       \n";
+            errMsg += "消息: " + args.ErrorMessage + "     \n";
+
+            if (errorType == "ParserError") {
+                errMsg += "文件: " + args.xamlFile + "     \n";
+                errMsg += "行: " + args.lineNumber + "     \n";
+                errMsg += "位置: " + args.charPosition + "     \n";
+            }
+            else if (errorType == "RuntimeError") {
+                if (args.lineNumber != 0) {
+                    errMsg += "行: " + args.lineNumber + "     \n";
+                    errMsg += "位置: " + args.charPosition + "     \n";
+                }
+                errMsg += "方法名称: " + args.methodName + "     \n";
+            }
+
+            引发新错误(errMsg);
+        }
+    </script>
+</head>
+<body style="overflow: hidden">
+  
+</body>
+</html>

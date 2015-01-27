@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PD.Model.Style" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PD.Model.Style" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/PD.Model" />
+  <xs:complexType name="ArrayOfT_BASE_STYLE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_BASE_STYLE" nillable="true" type="tns:T_BASE_STYLE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_BASE_STYLE" nillable="true" type="tns:ArrayOfT_BASE_STYLE" />
+  <xs:complexType name="T_BASE_STYLE">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/PD.Model" base="q1:State">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LastTime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="OrderCode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="StyleCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StyleIcon" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StyleId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StyleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StyleRemark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StyleTypeId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_BASE_STYLE" nillable="true" type="tns:T_BASE_STYLE" />
+</xs:schema>

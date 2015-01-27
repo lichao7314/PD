@@ -1,0 +1,2 @@
+﻿#key	         Uri												  Description
+PDService       http://localhost/PD.Services/PDService.svc     装修展示管理系统服务

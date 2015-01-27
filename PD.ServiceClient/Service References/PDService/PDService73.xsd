@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PD.Model.StyleType" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PD.Model.StyleType" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/PD.Model" />
+  <xs:complexType name="ArrayOfT_Base_StyleType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Base_StyleType" nillable="true" type="tns:T_Base_StyleType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Base_StyleType" nillable="true" type="tns:ArrayOfT_Base_StyleType" />
+  <xs:complexType name="T_Base_StyleType">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/PD.Model" base="q1:State">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HouseTypeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HouseTypeID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HouseTypeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StyleCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StyleId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StyleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StyleTypeId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="T_Base_StyleType" nillable="true" type="tns:T_Base_StyleType" />
+</xs:schema>

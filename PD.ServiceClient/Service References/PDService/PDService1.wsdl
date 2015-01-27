@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PD.Model.Design.MaterialType" />
+      <xsd:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/PD.Model" />
+      <xsd:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/PD.Model.UserLogin" />
+      <xsd:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/PD.Model.BaseData" />
+      <xsd:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/PD.Model.Style" />
+      <xsd:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/PD.Model.HouseType" />
+      <xsd:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/PD.Model.Product" />
+      <xsd:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/PD.Model.StyleType" />
+      <xsd:import schemaLocation="http://localhost/PD.Services/PDService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/PD.Model.Design.Main" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="PDService_SaveMaterilType_InputMessage">
+    <wsdl:part name="parameters" element="SaveMaterilType" />
+  </wsdl:message>
+  <wsdl:message name="PDService_SaveMaterilType_OutputMessage">
+    <wsdl:part name="parameters" element="SaveMaterilTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_ExistsMaterialType_InputMessage">
+    <wsdl:part name="parameters" element="ExistsMaterialType" />
+  </wsdl:message>
+  <wsdl:message name="PDService_ExistsMaterialType_OutputMessage">
+    <wsdl:part name="parameters" element="ExistsMaterialTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetMaterialType_InputMessage">
+    <wsdl:part name="parameters" element="GetMaterialType" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetMaterialType_OutputMessage">
+    <wsdl:part name="parameters" element="GetMaterialTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetServerTime_InputMessage">
+    <wsdl:part name="parameters" element="GetServerTime" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetServerTime_OutputMessage">
+    <wsdl:part name="parameters" element="GetServerTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_ExistsUser_InputMessage">
+    <wsdl:part name="parameters" element="ExistsUser" />
+  </wsdl:message>
+  <wsdl:message name="PDService_ExistsUser_OutputMessage">
+    <wsdl:part name="parameters" element="ExistsUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="AddUser" />
+  </wsdl:message>
+  <wsdl:message name="PDService_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_DeletUsers_InputMessage">
+    <wsdl:part name="parameters" element="DeletUsers" />
+  </wsdl:message>
+  <wsdl:message name="PDService_DeletUsers_OutputMessage">
+    <wsdl:part name="parameters" element="DeletUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetUserModel_InputMessage">
+    <wsdl:part name="parameters" element="GetUserModel" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetUserModel_OutputMessage">
+    <wsdl:part name="parameters" element="GetUserModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetUserModelList_InputMessage">
+    <wsdl:part name="parameters" element="GetUserModelList" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetUserModelList_OutputMessage">
+    <wsdl:part name="parameters" element="GetUserModelListResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetUserListCount_InputMessage">
+    <wsdl:part name="parameters" element="GetUserListCount" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetUserListCount_OutputMessage">
+    <wsdl:part name="parameters" element="GetUserListCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_ChangeUserPw_InputMessage">
+    <wsdl:part name="parameters" element="ChangeUserPw" />
+  </wsdl:message>
+  <wsdl:message name="PDService_ChangeUserPw_OutputMessage">
+    <wsdl:part name="parameters" element="ChangeUserPwResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_UserLogin_InputMessage">
+    <wsdl:part name="parameters" element="UserLogin" />
+  </wsdl:message>
+  <wsdl:message name="PDService_UserLogin_OutputMessage">
+    <wsdl:part name="parameters" element="UserLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetMenu_InputMessage">
+    <wsdl:part name="parameters" element="GetMenu" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetMenu_OutputMessage">
+    <wsdl:part name="parameters" element="GetMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetProfile_InputMessage">
+    <wsdl:part name="parameters" element="GetProfile" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetProfile_OutputMessage">
+    <wsdl:part name="parameters" element="GetProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_AddAddress_InputMessage">
+    <wsdl:part name="parameters" element="AddAddress" />
+  </wsdl:message>
+  <wsdl:message name="PDService_AddAddress_OutputMessage">
+    <wsdl:part name="parameters" element="AddAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="GetData" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_ExcuteSql_InputMessage">
+    <wsdl:part name="parameters" element="ExcuteSql" />
+  </wsdl:message>
+  <wsdl:message name="PDService_ExcuteSql_OutputMessage">
+    <wsdl:part name="parameters" element="ExcuteSqlResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_UnRegiestSofy_InputMessage">
+    <wsdl:part name="parameters" element="UnRegiestSofy" />
+  </wsdl:message>
+  <wsdl:message name="PDService_UnRegiestSofy_OutputMessage">
+    <wsdl:part name="parameters" element="UnRegiestSofyResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_SaveStyle_InputMessage">
+    <wsdl:part name="parameters" element="SaveStyle" />
+  </wsdl:message>
+  <wsdl:message name="PDService_SaveStyle_OutputMessage">
+    <wsdl:part name="parameters" element="SaveStyleResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetStyleList_InputMessage">
+    <wsdl:part name="parameters" element="GetStyleList" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetStyleList_OutputMessage">
+    <wsdl:part name="parameters" element="GetStyleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_ExistsStyle_InputMessage">
+    <wsdl:part name="parameters" element="ExistsStyle" />
+  </wsdl:message>
+  <wsdl:message name="PDService_ExistsStyle_OutputMessage">
+    <wsdl:part name="parameters" element="ExistsStyleResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetAllStyleList_InputMessage">
+    <wsdl:part name="parameters" element="GetAllStyleList" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetAllStyleList_OutputMessage">
+    <wsdl:part name="parameters" element="GetAllStyleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetByTypeIdStyleList_InputMessage">
+    <wsdl:part name="parameters" element="GetByTypeIdStyleList" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetByTypeIdStyleList_OutputMessage">
+    <wsdl:part name="parameters" element="GetByTypeIdStyleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_ExistsHouseType_InputMessage">
+    <wsdl:part name="parameters" element="ExistsHouseType" />
+  </wsdl:message>
+  <wsdl:message name="PDService_ExistsHouseType_OutputMessage">
+    <wsdl:part name="parameters" element="ExistsHouseTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetHouseTypeList_InputMessage">
+    <wsdl:part name="parameters" element="GetHouseTypeList" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetHouseTypeList_OutputMessage">
+    <wsdl:part name="parameters" element="GetHouseTypeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_SaveHouseType_InputMessage">
+    <wsdl:part name="parameters" element="SaveHouseType" />
+  </wsdl:message>
+  <wsdl:message name="PDService_SaveHouseType_OutputMessage">
+    <wsdl:part name="parameters" element="SaveHouseTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetAllHouseTypeList_InputMessage">
+    <wsdl:part name="parameters" element="GetAllHouseTypeList" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetAllHouseTypeList_OutputMessage">
+    <wsdl:part name="parameters" element="GetAllHouseTypeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_ExistsProduct_InputMessage">
+    <wsdl:part name="parameters" element="ExistsProduct" />
+  </wsdl:message>
+  <wsdl:message name="PDService_ExistsProduct_OutputMessage">
+    <wsdl:part name="parameters" element="ExistsProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_SaveProduct_InputMessage">
+    <wsdl:part name="parameters" element="SaveProduct" />
+  </wsdl:message>
+  <wsdl:message name="PDService_SaveProduct_OutputMessage">
+    <wsdl:part name="parameters" element="SaveProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetProductList_InputMessage">
+    <wsdl:part name="parameters" element="GetProductList" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetProductList_OutputMessage">
+    <wsdl:part name="parameters" element="GetProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetProductCount_InputMessage">
+    <wsdl:part name="parameters" element="GetProductCount" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetProductCount_OutputMessage">
+    <wsdl:part name="parameters" element="GetProductCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetProductDisplayCount_InputMessage">
+    <wsdl:part name="parameters" element="GetProductDisplayCount" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetProductDisplayCount_OutputMessage">
+    <wsdl:part name="parameters" element="GetProductDisplayCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetProductDisplayList_InputMessage">
+    <wsdl:part name="parameters" element="GetProductDisplayList" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetProductDisplayList_OutputMessage">
+    <wsdl:part name="parameters" element="GetProductDisplayListResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetAllProductList_InputMessage">
+    <wsdl:part name="parameters" element="GetAllProductList" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetAllProductList_OutputMessage">
+    <wsdl:part name="parameters" element="GetAllProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetProductInIDS_InputMessage">
+    <wsdl:part name="parameters" element="GetProductInIDS" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetProductInIDS_OutputMessage">
+    <wsdl:part name="parameters" element="GetProductInIDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetUpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="GetUpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetUpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="GetUpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetByDesignIdMaterial_InputMessage">
+    <wsdl:part name="parameters" element="GetByDesignIdMaterial" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetByDesignIdMaterial_OutputMessage">
+    <wsdl:part name="parameters" element="GetByDesignIdMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetHouseInProduct_InputMessage">
+    <wsdl:part name="parameters" element="GetHouseInProduct" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetHouseInProduct_OutputMessage">
+    <wsdl:part name="parameters" element="GetHouseInProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_SaveContent_InputMessage">
+    <wsdl:part name="parameters" element="SaveContent" />
+  </wsdl:message>
+  <wsdl:message name="PDService_SaveContent_OutputMessage">
+    <wsdl:part name="parameters" element="SaveContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetContentData_InputMessage">
+    <wsdl:part name="parameters" element="GetContentData" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetContentData_OutputMessage">
+    <wsdl:part name="parameters" element="GetContentDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_CreateDirectory_InputMessage">
+    <wsdl:part name="parameters" element="CreateDirectory" />
+  </wsdl:message>
+  <wsdl:message name="PDService_CreateDirectory_OutputMessage">
+    <wsdl:part name="parameters" element="CreateDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_DeleteDirectory_InputMessage">
+    <wsdl:part name="parameters" element="DeleteDirectory" />
+  </wsdl:message>
+  <wsdl:message name="PDService_DeleteDirectory_OutputMessage">
+    <wsdl:part name="parameters" element="DeleteDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_StoreFileAdvanced_InputMessage">
+    <wsdl:part name="parameters" element="StoreFileAdvanced" />
+  </wsdl:message>
+  <wsdl:message name="PDService_StoreFileAdvanced_OutputMessage">
+    <wsdl:part name="parameters" element="StoreFileAdvancedResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_CancelUpload_InputMessage">
+    <wsdl:part name="parameters" element="CancelUpload" />
+  </wsdl:message>
+  <wsdl:message name="PDService_CancelUpload_OutputMessage">
+    <wsdl:part name="parameters" element="CancelUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetByFatherAreaIDList_InputMessage">
+    <wsdl:part name="parameters" element="GetByFatherAreaIDList" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetByFatherAreaIDList_OutputMessage">
+    <wsdl:part name="parameters" element="GetByFatherAreaIDListResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetAllRole_InputMessage">
+    <wsdl:part name="parameters" element="GetAllRole" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetAllRole_OutputMessage">
+    <wsdl:part name="parameters" element="GetAllRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_SaveStyleType_InputMessage">
+    <wsdl:part name="parameters" element="SaveStyleType" />
+  </wsdl:message>
+  <wsdl:message name="PDService_SaveStyleType_OutputMessage">
+    <wsdl:part name="parameters" element="SaveStyleTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetByHouseTypeIdList_InputMessage">
+    <wsdl:part name="parameters" element="GetByHouseTypeIdList" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetByHouseTypeIdList_OutputMessage">
+    <wsdl:part name="parameters" element="GetByHouseTypeIdListResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetStyleTypeList_InputMessage">
+    <wsdl:part name="parameters" element="GetStyleTypeList" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetStyleTypeList_OutputMessage">
+    <wsdl:part name="parameters" element="GetStyleTypeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetByHouseTypeIdNotExistsList_InputMessage">
+    <wsdl:part name="parameters" element="GetByHouseTypeIdNotExistsList" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetByHouseTypeIdNotExistsList_OutputMessage">
+    <wsdl:part name="parameters" element="GetByHouseTypeIdNotExistsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetHouseTypeInStyle_InputMessage">
+    <wsdl:part name="parameters" element="GetHouseTypeInStyle" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetHouseTypeInStyle_OutputMessage">
+    <wsdl:part name="parameters" element="GetHouseTypeInStyleResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_SaveDesign_InputMessage">
+    <wsdl:part name="parameters" element="SaveDesign" />
+  </wsdl:message>
+  <wsdl:message name="PDService_SaveDesign_OutputMessage">
+    <wsdl:part name="parameters" element="SaveDesignResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_ExistsDesign_InputMessage">
+    <wsdl:part name="parameters" element="ExistsDesign" />
+  </wsdl:message>
+  <wsdl:message name="PDService_ExistsDesign_OutputMessage">
+    <wsdl:part name="parameters" element="ExistsDesignResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetDesignCount_InputMessage">
+    <wsdl:part name="parameters" element="GetDesignCount" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetDesignCount_OutputMessage">
+    <wsdl:part name="parameters" element="GetDesignCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetDesignSource_InputMessage">
+    <wsdl:part name="parameters" element="GetDesignSource" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetDesignSource_OutputMessage">
+    <wsdl:part name="parameters" element="GetDesignSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetHouseMaterialInDesignId_InputMessage">
+    <wsdl:part name="parameters" element="GetHouseMaterialInDesignId" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetHouseMaterialInDesignId_OutputMessage">
+    <wsdl:part name="parameters" element="GetHouseMaterialInDesignIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetAllDegignCount_InputMessage">
+    <wsdl:part name="parameters" element="GetAllDegignCount" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetAllDegignCount_OutputMessage">
+    <wsdl:part name="parameters" element="GetAllDegignCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetDesignInIDS_InputMessage">
+    <wsdl:part name="parameters" element="GetDesignInIDS" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetDesignInIDS_OutputMessage">
+    <wsdl:part name="parameters" element="GetDesignInIDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetUpdateDesign_InputMessage">
+    <wsdl:part name="parameters" element="GetUpdateDesign" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetUpdateDesign_OutputMessage">
+    <wsdl:part name="parameters" element="GetUpdateDesignResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_CheckUpdate_InputMessage">
+    <wsdl:part name="parameters" element="CheckUpdate" />
+  </wsdl:message>
+  <wsdl:message name="PDService_CheckUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="CheckUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_AddOperation_InputMessage">
+    <wsdl:part name="parameters" element="AddOperation" />
+  </wsdl:message>
+  <wsdl:message name="PDService_AddOperation_OutputMessage">
+    <wsdl:part name="parameters" element="AddOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetOperation_InputMessage">
+    <wsdl:part name="parameters" element="GetOperation" />
+  </wsdl:message>
+  <wsdl:message name="PDService_GetOperation_OutputMessage">
+    <wsdl:part name="parameters" element="GetOperationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PDService">
+    <wsdl:operation name="SaveMaterilType">
+      <wsdl:input wsaw:Action="urn:PDService/SaveMaterilType" message="PDService_SaveMaterilType_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/SaveMaterilTypeResponse" message="PDService_SaveMaterilType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsMaterialType">
+      <wsdl:input wsaw:Action="urn:PDService/ExistsMaterialType" message="PDService_ExistsMaterialType_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/ExistsMaterialTypeResponse" message="PDService_ExistsMaterialType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialType">
+      <wsdl:input wsaw:Action="urn:PDService/GetMaterialType" message="PDService_GetMaterialType_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetMaterialTypeResponse" message="PDService_GetMaterialType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerTime">
+      <wsdl:input wsaw:Action="urn:PDService/GetServerTime" message="PDService_GetServerTime_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetServerTimeResponse" message="PDService_GetServerTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsUser">
+      <wsdl:input wsaw:Action="urn:PDService/ExistsUser" message="PDService_ExistsUser_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/ExistsUserResponse" message="PDService_ExistsUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="urn:PDService/AddUser" message="PDService_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/AddUserResponse" message="PDService_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletUsers">
+      <wsdl:input wsaw:Action="urn:PDService/DeletUsers" message="PDService_DeletUsers_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/DeletUsersResponse" message="PDService_DeletUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserModel">
+      <wsdl:input wsaw:Action="urn:PDService/GetUserModel" message="PDService_GetUserModel_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetUserModelResponse" message="PDService_GetUserModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserModelList">
+      <wsdl:input wsaw:Action="urn:PDService/GetUserModelList" message="PDService_GetUserModelList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetUserModelListResponse" message="PDService_GetUserModelList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserListCount">
+      <wsdl:input wsaw:Action="urn:PDService/GetUserListCount" message="PDService_GetUserListCount_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetUserListCountResponse" message="PDService_GetUserListCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPw">
+      <wsdl:input wsaw:Action="urn:PDService/ChangeUserPw" message="PDService_ChangeUserPw_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/ChangeUserPwResponse" message="PDService_ChangeUserPw_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserLogin">
+      <wsdl:input wsaw:Action="urn:PDService/UserLogin" message="PDService_UserLogin_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/UserLoginResponse" message="PDService_UserLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <wsdl:input wsaw:Action="urn:PDService/GetMenu" message="PDService_GetMenu_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetMenuResponse" message="PDService_GetMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <wsdl:input wsaw:Action="urn:PDService/GetProfile" message="PDService_GetProfile_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetProfileResponse" message="PDService_GetProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAddress">
+      <wsdl:input wsaw:Action="urn:PDService/AddAddress" message="PDService_AddAddress_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/AddAddressResponse" message="PDService_AddAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="urn:PDService/GetData" message="PDService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetDataResponse" message="PDService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcuteSql">
+      <wsdl:input wsaw:Action="urn:PDService/ExcuteSql" message="PDService_ExcuteSql_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/ExcuteSqlResponse" message="PDService_ExcuteSql_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnRegiestSofy">
+      <wsdl:input wsaw:Action="urn:PDService/UnRegiestSofy" message="PDService_UnRegiestSofy_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/UnRegiestSofyResponse" message="PDService_UnRegiestSofy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveStyle">
+      <wsdl:input wsaw:Action="urn:PDService/SaveStyle" message="PDService_SaveStyle_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/SaveStyleResponse" message="PDService_SaveStyle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStyleList">
+      <wsdl:input wsaw:Action="urn:PDService/GetStyleList" message="PDService_GetStyleList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetStyleListResponse" message="PDService_GetStyleList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsStyle">
+      <wsdl:input wsaw:Action="urn:PDService/ExistsStyle" message="PDService_ExistsStyle_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/ExistsStyleResponse" message="PDService_ExistsStyle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStyleList">
+      <wsdl:input wsaw:Action="urn:PDService/GetAllStyleList" message="PDService_GetAllStyleList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetAllStyleListResponse" message="PDService_GetAllStyleList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByTypeIdStyleList">
+      <wsdl:input wsaw:Action="urn:PDService/GetByTypeIdStyleList" message="PDService_GetByTypeIdStyleList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetByTypeIdStyleListResponse" message="PDService_GetByTypeIdStyleList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsHouseType">
+      <wsdl:input wsaw:Action="urn:PDService/ExistsHouseType" message="PDService_ExistsHouseType_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/ExistsHouseTypeResponse" message="PDService_ExistsHouseType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHouseTypeList">
+      <wsdl:input wsaw:Action="urn:PDService/GetHouseTypeList" message="PDService_GetHouseTypeList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetHouseTypeListResponse" message="PDService_GetHouseTypeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveHouseType">
+      <wsdl:input wsaw:Action="urn:PDService/SaveHouseType" message="PDService_SaveHouseType_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/SaveHouseTypeResponse" message="PDService_SaveHouseType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllHouseTypeList">
+      <wsdl:input wsaw:Action="urn:PDService/GetAllHouseTypeList" message="PDService_GetAllHouseTypeList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetAllHouseTypeListResponse" message="PDService_GetAllHouseTypeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsProduct">
+      <wsdl:input wsaw:Action="urn:PDService/ExistsProduct" message="PDService_ExistsProduct_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/ExistsProductResponse" message="PDService_ExistsProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProduct">
+      <wsdl:input wsaw:Action="urn:PDService/SaveProduct" message="PDService_SaveProduct_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/SaveProductResponse" message="PDService_SaveProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductList">
+      <wsdl:input wsaw:Action="urn:PDService/GetProductList" message="PDService_GetProductList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetProductListResponse" message="PDService_GetProductList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCount">
+      <wsdl:input wsaw:Action="urn:PDService/GetProductCount" message="PDService_GetProductCount_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetProductCountResponse" message="PDService_GetProductCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductDisplayCount">
+      <wsdl:input wsaw:Action="urn:PDService/GetProductDisplayCount" message="PDService_GetProductDisplayCount_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetProductDisplayCountResponse" message="PDService_GetProductDisplayCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductDisplayList">
+      <wsdl:input wsaw:Action="urn:PDService/GetProductDisplayList" message="PDService_GetProductDisplayList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetProductDisplayListResponse" message="PDService_GetProductDisplayList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductList">
+      <wsdl:input wsaw:Action="urn:PDService/GetAllProductList" message="PDService_GetAllProductList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetAllProductListResponse" message="PDService_GetAllProductList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductInIDS">
+      <wsdl:input wsaw:Action="urn:PDService/GetProductInIDS" message="PDService_GetProductInIDS_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetProductInIDSResponse" message="PDService_GetProductInIDS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdateProduct">
+      <wsdl:input wsaw:Action="urn:PDService/GetUpdateProduct" message="PDService_GetUpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetUpdateProductResponse" message="PDService_GetUpdateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByDesignIdMaterial">
+      <wsdl:input wsaw:Action="urn:PDService/GetByDesignIdMaterial" message="PDService_GetByDesignIdMaterial_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetByDesignIdMaterialResponse" message="PDService_GetByDesignIdMaterial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHouseInProduct">
+      <wsdl:input wsaw:Action="urn:PDService/GetHouseInProduct" message="PDService_GetHouseInProduct_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetHouseInProductResponse" message="PDService_GetHouseInProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveContent">
+      <wsdl:input wsaw:Action="urn:PDService/SaveContent" message="PDService_SaveContent_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/SaveContentResponse" message="PDService_SaveContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContentData">
+      <wsdl:input wsaw:Action="urn:PDService/GetContentData" message="PDService_GetContentData_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetContentDataResponse" message="PDService_GetContentData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDirectory">
+      <wsdl:input wsaw:Action="urn:PDService/CreateDirectory" message="PDService_CreateDirectory_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/CreateDirectoryResponse" message="PDService_CreateDirectory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDirectory">
+      <wsdl:input wsaw:Action="urn:PDService/DeleteDirectory" message="PDService_DeleteDirectory_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/DeleteDirectoryResponse" message="PDService_DeleteDirectory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreFileAdvanced">
+      <wsdl:input wsaw:Action="urn:PDService/StoreFileAdvanced" message="PDService_StoreFileAdvanced_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/StoreFileAdvancedResponse" message="PDService_StoreFileAdvanced_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelUpload">
+      <wsdl:input wsaw:Action="urn:PDService/CancelUpload" message="PDService_CancelUpload_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/CancelUploadResponse" message="PDService_CancelUpload_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByFatherAreaIDList">
+      <wsdl:input wsaw:Action="urn:PDService/GetByFatherAreaIDList" message="PDService_GetByFatherAreaIDList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetByFatherAreaIDListResponse" message="PDService_GetByFatherAreaIDList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRole">
+      <wsdl:input wsaw:Action="urn:PDService/GetAllRole" message="PDService_GetAllRole_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetAllRoleResponse" message="PDService_GetAllRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveStyleType">
+      <wsdl:input wsaw:Action="urn:PDService/SaveStyleType" message="PDService_SaveStyleType_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/SaveStyleTypeResponse" message="PDService_SaveStyleType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByHouseTypeIdList">
+      <wsdl:input wsaw:Action="urn:PDService/GetByHouseTypeIdList" message="PDService_GetByHouseTypeIdList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetByHouseTypeIdListResponse" message="PDService_GetByHouseTypeIdList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStyleTypeList">
+      <wsdl:input wsaw:Action="urn:PDService/GetStyleTypeList" message="PDService_GetStyleTypeList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetStyleTypeListResponse" message="PDService_GetStyleTypeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByHouseTypeIdNotExistsList">
+      <wsdl:input wsaw:Action="urn:PDService/GetByHouseTypeIdNotExistsList" message="PDService_GetByHouseTypeIdNotExistsList_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetByHouseTypeIdNotExistsListResponse" message="PDService_GetByHouseTypeIdNotExistsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHouseTypeInStyle">
+      <wsdl:input wsaw:Action="urn:PDService/GetHouseTypeInStyle" message="PDService_GetHouseTypeInStyle_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetHouseTypeInStyleResponse" message="PDService_GetHouseTypeInStyle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDesign">
+      <wsdl:input wsaw:Action="urn:PDService/SaveDesign" message="PDService_SaveDesign_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/SaveDesignResponse" message="PDService_SaveDesign_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsDesign">
+      <wsdl:input wsaw:Action="urn:PDService/ExistsDesign" message="PDService_ExistsDesign_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/ExistsDesignResponse" message="PDService_ExistsDesign_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDesignCount">
+      <wsdl:input wsaw:Action="urn:PDService/GetDesignCount" message="PDService_GetDesignCount_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetDesignCountResponse" message="PDService_GetDesignCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDesignSource">
+      <wsdl:input wsaw:Action="urn:PDService/GetDesignSource" message="PDService_GetDesignSource_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetDesignSourceResponse" message="PDService_GetDesignSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHouseMaterialInDesignId">
+      <wsdl:input wsaw:Action="urn:PDService/GetHouseMaterialInDesignId" message="PDService_GetHouseMaterialInDesignId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetHouseMaterialInDesignIdResponse" message="PDService_GetHouseMaterialInDesignId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDegignCount">
+      <wsdl:input wsaw:Action="urn:PDService/GetAllDegignCount" message="PDService_GetAllDegignCount_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetAllDegignCountResponse" message="PDService_GetAllDegignCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDesignInIDS">
+      <wsdl:input wsaw:Action="urn:PDService/GetDesignInIDS" message="PDService_GetDesignInIDS_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetDesignInIDSResponse" message="PDService_GetDesignInIDS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdateDesign">
+      <wsdl:input wsaw:Action="urn:PDService/GetUpdateDesign" message="PDService_GetUpdateDesign_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetUpdateDesignResponse" message="PDService_GetUpdateDesign_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUpdate">
+      <wsdl:input wsaw:Action="urn:PDService/CheckUpdate" message="PDService_CheckUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/CheckUpdateResponse" message="PDService_CheckUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOperation">
+      <wsdl:input wsaw:Action="urn:PDService/AddOperation" message="PDService_AddOperation_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/AddOperationResponse" message="PDService_AddOperation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperation">
+      <wsdl:input wsaw:Action="urn:PDService/GetOperation" message="PDService_GetOperation_InputMessage" />
+      <wsdl:output wsaw:Action="urn:PDService/GetOperationResponse" message="PDService_GetOperation_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
